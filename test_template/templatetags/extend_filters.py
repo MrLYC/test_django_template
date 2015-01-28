@@ -6,7 +6,7 @@ from django import template
 register = template.Library()
 
 
-@register.filter("oruser")
+@register.filter(name="oruser")
 def oruser(name):
     """Return name if is not empty or user name
     """
