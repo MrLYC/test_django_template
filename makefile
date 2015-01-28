@@ -35,3 +35,7 @@ test: pylint
 
 requires: $(ROOTPATH)/requirements.txt
 	$(PIPINSTALL) -r $(ROOTPATH)/requirements.txt
+
+run:
+	$(eval port ?= 9168)
+	$(PYTHON) $(ROOTPATH)/manage.py runserver 0:$(port)

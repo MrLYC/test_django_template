@@ -57,6 +57,7 @@ target/
 *.bak
 *.tmp
 *.*~
+db.sqlite3
 
 # virtualenv
 test_template-venv/
