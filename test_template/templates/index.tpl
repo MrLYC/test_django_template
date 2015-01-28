@@ -2,6 +2,7 @@
 <head>
 </head>
 <body>
-    <h2>Hello world</h2>
+    {% load extend_filters %}
+    <h2>Hello {{ "world"|oruser }}</h2>
 </body>
 </html>
