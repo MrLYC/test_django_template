@@ -11,7 +11,6 @@ PYLINT := $(PYENV) pylint --disable=I0011 --msg-template="{path}:{line}: [{msg_i
 PYTEST := $(PYENV) py.test -v -x
 PIPINSTALL := $(PYENV) pip install -i http://pypi.douban.com/simple/
 
--include $(DEVMKFILE)
 
 .PHONY: dev-mk clean full-clean pylint pylint-full test requires
 
