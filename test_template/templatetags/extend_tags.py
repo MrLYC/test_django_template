@@ -27,3 +27,13 @@ def listvar(namespace, var, *values):
     """
     namespace[var] = [i for i in values if i]
     return ""
+
+
+@register.assignment_tag(name="eval")
+def evaltag(expr):
+    """evaluate the expr and return the value
+    """
+    return eval(expr, {
+        "__builtins__": None,
+        "globals": None,
+        "locals": None})

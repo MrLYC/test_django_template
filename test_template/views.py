@@ -7,7 +7,8 @@ from django.shortcuts import render
 
 class IndexView(View):
     def get(self, request):
-        return render(request, "index.tpl")
+        tpl = request.GET.get("tpl", "index")
+        return render(request, "%s.tpl" % tpl)
 
 
 class TestCache(View):
