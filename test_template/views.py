@@ -14,3 +14,9 @@ class IndexView(View):
 class TestCache(View):
     def get(self, request):
         return render(request, "cache.tpl", {"cache": {}})
+
+
+class TestSQL(View):
+    def get(self, request):
+        return render(request, "sql.tpl", {"model": [
+            {"name": 0, "val": 2}, {"name": 1, "val": 1}, {"name": 2, "val": 3}]})
