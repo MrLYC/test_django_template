@@ -20,3 +20,21 @@ class TestSQL(View):
     def get(self, request):
         return render(request, "sql.tpl", {"model": [
             {"name": 0, "val": 2}, {"name": 1, "val": 1}, {"name": 2, "val": 3}]})
+
+
+class TestExcel(View):
+    def get(self, request):
+        response = render(
+            request,
+            "excel.xml",
+            {
+                "model": [
+                    {"name": 0, "val": 2},
+                    {"name": 1, "val": 1},
+                    {"name": 2, "val": 3},
+                ]
+            },
+            content_type="application/ms-excel",
+        )
+        response["Content-Disposition"] = 'attachment:filename="xxx.xls"'
+        return response
